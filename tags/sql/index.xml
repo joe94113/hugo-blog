@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SQL on Joe&#39;s Blog</title>
-    <link>https://joe94113.github.io/tags/sql/</link>
+    <link>https://hugo-blog-gamma.vercel.app/tags/sql/</link>
     <description>Recent content in SQL on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 27 Oct 2021 09:07:47 +0800</lastBuildDate>
     
-	<atom:link href="https://joe94113.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-gamma.vercel.app/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DATE、TIME、DATETIME 和 TIMESTAMP 類型之間有什麼區別</title>
-      <link>https://joe94113.github.io/blog/sql_time_type_difference/</link>
+      <link>https://hugo-blog-gamma.vercel.app/blog/sql_time_type_difference/</link>
       <pubDate>Wed, 27 Oct 2021 09:07:47 +0800</pubDate>
       
-      <guid>https://joe94113.github.io/blog/sql_time_type_difference/</guid>
+      <guid>https://hugo-blog-gamma.vercel.app/blog/sql_time_type_difference/</guid>
       <description>DATE、TIME、DATETIME 和 TIMESTAMP 類型之間有什麼區別 DATE： 具有日期部分但沒有時間部分的值。 MySQL 以YYYY-MM-DD格式檢索和顯示 DATE 值。支持的範圍是 1000-01-01 到 9999-12-31。</description>
     </item>
     
     <item>
       <title>MySQL入門筆記</title>
-      <link>https://joe94113.github.io/blog/mysql/</link>
+      <link>https://hugo-blog-gamma.vercel.app/blog/mysql/</link>
       <pubDate>Sat, 24 Oct 2020 10:07:47 +0800</pubDate>
       
-      <guid>https://joe94113.github.io/blog/mysql/</guid>
+      <guid>https://hugo-blog-gamma.vercel.app/blog/mysql/</guid>
       <description>MySQ 語法 drop database &amp;#34;database名稱&amp;#34;; 創建 database
 create database &amp;#34;database名稱&amp;#34;; 使用這個 database</description>
     </item>
