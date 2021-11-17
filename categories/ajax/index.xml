@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AJAX on Joe&#39;s Blog</title>
-    <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/categories/ajax/</link>
+    <link>https://hugo-blog-gamma.vercel.app/categories/ajax/</link>
     <description>Recent content in AJAX on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Mon, 25 Oct 2021 10:07:47 +0800</lastBuildDate>
     
-	<atom:link href="https://hugo-blog-5d5r8egzr-joe94113.vercel.app/categories/ajax/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-gamma.vercel.app/categories/ajax/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Laravel csrf token mismatch for ajax POST Request</title>
-      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</link>
+      <link>https://hugo-blog-gamma.vercel.app/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</link>
       <pubDate>Mon, 25 Oct 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</guid>
+      <guid>https://hugo-blog-gamma.vercel.app/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</guid>
       <description>Laravel csrf token mismatch for ajax POST Request 在 laravel 裡使用 ajax post 方法遇到 CSRF Token 不符問題</description>
     </item>
     

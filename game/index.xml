@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>game on Joe&#39;s Blog</title>
-    <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/game/</link>
+    <link>https://hugo-blog-gamma.vercel.app/game/</link>
     <description>Recent content in game on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Mon, 25 Oct 2021 13:49:23 +0600</lastBuildDate>
     
-	<atom:link href="https://hugo-blog-5d5r8egzr-joe94113.vercel.app/game/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-gamma.vercel.app/game/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vscode on Joe&#39;s Blog</title>
-    <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/vscode/</link>
+    <link>https://hugo-blog-gamma.vercel.app/tags/vscode/</link>
     <description>Recent content in vscode on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 10 Sep 2021 10:07:47 +0800</lastBuildDate>
     
-	<atom:link href="https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-gamma.vercel.app/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用vscode Code Runner 跑JS程式碼，出現亂碼問題</title>
-      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/blog/vscode_coderunner/</link>
+      <link>https://hugo-blog-gamma.vercel.app/blog/vscode_coderunner/</link>
       <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/blog/vscode_coderunner/</guid>
+      <guid>https://hugo-blog-gamma.vercel.app/blog/vscode_coderunner/</guid>
       <description>使用vscode Code Runner 跑JS程式碼，出現亂碼問題 問題如下圖:
 解決方法:
 安裝node.js 官方連結
