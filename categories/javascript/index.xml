@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Joe&#39;s Blog</title>
-    <link>https://hugo-blog-gamma.vercel.app/categories/javascript/</link>
+    <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/categories/javascript/</link>
     <description>Recent content in Javascript on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 14 Oct 2021 10:07:47 +0800</lastBuildDate>
     
-	<atom:link href="https://hugo-blog-gamma.vercel.app/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-naryl0a16-joe94113.vercel.app/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JS取得目前瀏覽器位置</title>
-      <link>https://hugo-blog-gamma.vercel.app/blog/js_get_location/</link>
+      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/js_get_location/</link>
       <pubDate>Thu, 14 Oct 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-gamma.vercel.app/blog/js_get_location/</guid>
+      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/js_get_location/</guid>
       <description>JS 取得目前瀏覽器位置 Navigator.geolocation DOC
 Navigator.geolocation 回傳一個唯讀的 Geolocation 物件，透過這個物件可以存取設備的位置訊息。同時也允許網站或應用程式根據使用者的位置提供客製化的結果。
 &amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt;&amp;lt;body&amp;gt;&amp;lt;button onclick=&amp;#34;getLocation()&amp;#34;&amp;gt;取得您目前所在位置的經緯度&amp;lt;/button&amp;gt;&amp;lt;p id=&amp;#34;msg&amp;#34;&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;script&amp;gt;var m = document.</description>
@@ -24,28 +24,28 @@ Navigator.geolocation 回傳一個唯讀的 Geolocation 物件，透過這個物
     
     <item>
       <title>Html select選單設定&#39;disabled&#39; =&gt; &#39;true&#39;無法submit解法</title>
-      <link>https://hugo-blog-gamma.vercel.app/blog/html_select_can_not_submit/</link>
+      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/html_select_can_not_submit/</link>
       <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-gamma.vercel.app/blog/html_select_can_not_submit/</guid>
+      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/html_select_can_not_submit/</guid>
       <description>Html select 選單設定&amp;rsquo;disabled&amp;rsquo; =&amp;gt; &amp;lsquo;true&#39;無法 submit 解法 設定成&amp;rsquo;disabled&amp;rsquo; =&amp;gt; &amp;lsquo;true&#39;代表不能更改，但在傳送表單時無法傳遞出去</description>
     </item>
     
     <item>
       <title>JS實現部分區域全螢幕即退出</title>
-      <link>https://hugo-blog-gamma.vercel.app/blog/js_screen/</link>
+      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/js_screen/</link>
       <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-gamma.vercel.app/blog/js_screen/</guid>
+      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/js_screen/</guid>
       <description>JS 實現部分區域全螢幕即退出 1. 首先找出要全螢幕區域 `var elem = document.getElementById(&amp;quot;game&amp;quot;);`  2. 建立全螢幕 function // 局部全螢幕 function requestFullScreen(element) { var requestMethod = element.</description>
     </item>
     
     <item>
       <title>使用vscode Code Runner 跑JS程式碼，出現亂碼問題</title>
-      <link>https://hugo-blog-gamma.vercel.app/blog/vscode_coderunner/</link>
+      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/vscode_coderunner/</link>
       <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-gamma.vercel.app/blog/vscode_coderunner/</guid>
+      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/vscode_coderunner/</guid>
       <description>使用vscode Code Runner 跑JS程式碼，出現亂碼問題 問題如下圖:
 解決方法:
 安裝node.js 官方連結
@@ -54,10 +54,10 @@ Navigator.geolocation 回傳一個唯讀的 Geolocation 物件，透過這個物
     
     <item>
       <title>Jquery網頁離開前向使用者確認</title>
-      <link>https://hugo-blog-gamma.vercel.app/blog/js_beforeunload/</link>
+      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/js_beforeunload/</link>
       <pubDate>Thu, 09 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-gamma.vercel.app/blog/js_beforeunload/</guid>
+      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/js_beforeunload/</guid>
       <description>Jquery 網頁離開前向使用者確認 窗口的 onbeforeunload 屬性可以設置為一個函數，這個函數返回一個字符串，該字符串在對話框中顯示給用戶，以確認用戶想要離開。這是為了防止用戶端在使用過程中丟失數據。不過它經常被用來欺騙用戶。
 所以從 Chrome 51 開始，將不再向用戶顯示自定義字符串。Chrome 仍會顯示一個對話框以防止用戶丟失數據，但其內容將由瀏覽器設置而不是網頁設置。</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JQuery on Joe&#39;s Blog</title>
-    <link>https://hugo-blog-gamma.vercel.app/categories/jquery/</link>
+    <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/categories/jquery/</link>
     <description>Recent content in JQuery on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 13 Oct 2021 10:07:47 +0800</lastBuildDate>
     
-	<atom:link href="https://hugo-blog-gamma.vercel.app/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-naryl0a16-joe94113.vercel.app/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to use Chosen JQuery plugin on Laravel</title>
-      <link>https://hugo-blog-gamma.vercel.app/blog/laravel_use_chosen/</link>
+      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/laravel_use_chosen/</link>
       <pubDate>Wed, 13 Oct 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-gamma.vercel.app/blog/laravel_use_chosen/</guid>
+      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/laravel_use_chosen/</guid>
       <description>How to use Chosen JQuery plugin on Laravel chosen packagist</description>
     </item>
     
