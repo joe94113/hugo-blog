@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Joe&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="this is game">
+  <meta name="author" content="Joe">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+
+  
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://joe94113.github.io"><img class="img-fluid"
+          src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/Blizzardsumme/"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/guan___zhi/?hl=zh-tw"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/joe94113"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://joe94113.github.io"><img class="img-fluid"
+            src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/">新站位置</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/about">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/timeline">timeline</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/game">Game</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://joe94113.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+<script
+  language="javascript"
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/phaser@2.4.2/dist/phaser.min.js"
+></script>
+<div id="game" class="container"></div>
+<script>
+  var game = new Phaser.Game(480, 320, Phaser.AUTO, "game", {
+    preload: preload,
+    create: create,
+    update: update,
+  });
+
+  var ball;
+  var paddle;
+  var bricks;
+  var newBrick;
+  var brickInfo;
+  var scoreText;
+  var score = 0;
+  var lives = 3;
+  var livesText;
+  var lifeLostText;
+
+  function preload() {
+    handleRemoteImagesOnJSFiddle();
+    game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    game.stage.backgroundColor = "#eee";
+    game.load.image("ball", "img/ball.png");
+    game.load.image("paddle", "img/paddle.png");
+    game.load.image("brick", "img/brick.png");
+  }
+  function create() {
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+    game.physics.arcade.checkCollision.down = false;
+    ball = game.add.sprite(
+      game.world.width * 0.5,
+      game.world.height - 25,
+      "ball"
+    );
+    ball.anchor.set(0.5);
+    game.physics.enable(ball, Phaser.Physics.ARCADE);
+    ball.body.velocity.set(150, -150);
+    ball.body.collideWorldBounds = true;
+    ball.body.bounce.set(1);
+    ball.checkWorldBounds = true;
+    ball.events.onOutOfBounds.add(ballLeaveScreen, this);
+
+    paddle = game.add.sprite(
+      game.world.width * 0.5,
+      game.world.height - 5,
+      "paddle"
+    );
+    paddle.anchor.set(0.5, 1);
+    game.physics.enable(paddle, Phaser.Physics.ARCADE);
+    paddle.body.immovable = true;
+
+    initBricks();
+
+    textStyle = { font: "18px Arial", fill: "#0095DD" };
+    scoreText = game.add.text(5, 5, "分數: 0", textStyle);
+    livesText = game.add.text(
+      game.world.width - 5,
+      5,
+      "❤: " + lives,
+      textStyle
+    );
+    livesText.anchor.set(1, 0);
+    lifeLostText = game.add.text(
+      game.world.width * 0.5,
+      game.world.height * 0.5,
+      "-1❤, 點擊繼續",
+      textStyle
+    );
+    lifeLostText.anchor.set(0.5);
+    lifeLostText.visible = false;
+  }
+  function update() {
+    game.physics.arcade.collide(ball, paddle);
+    game.physics.arcade.collide(ball, bricks, ballHitBrick);
+    paddle.x = game.input.x || game.world.width * 0.5;
+  }
+  function initBricks() {
+    brickInfo = {
+      width: 50,
+      height: 20,
+      count: {
+        row: 7,
+        col: 3,
+      },
+      offset: {
+        top: 50,
+        left: 60,
+      },
+      padding: 10,
+    };
+    bricks = game.add.group();
+    for (c = 0; c < brickInfo.count.col; c++) {
+      for (r = 0; r < brickInfo.count.row; r++) {
+        var brickX =
+          r * (brickInfo.width + brickInfo.padding) + brickInfo.offset.left;
+        var brickY =
+          c * (brickInfo.height + brickInfo.padding) + brickInfo.offset.top;
+        newBrick = game.add.sprite(brickX, brickY, "brick");
+        game.physics.enable(newBrick, Phaser.Physics.ARCADE);
+        newBrick.body.immovable = true;
+        newBrick.anchor.set(0.5);
+        bricks.add(newBrick);
+      }
+    }
+  }
+  function ballHitBrick(ball, brick) {
+    brick.kill();
+    score += 10;
+    scoreText.setText("分數: " + score);
+    if (score === brickInfo.count.row * brickInfo.count.col * 10) {
+      alert("你贏了, 恭喜!");
+      location.reload();
+    }
+  }
+  function ballLeaveScreen() {
+    lives--;
+    if (lives) {
+      livesText.setText("❤: " + lives);
+      lifeLostText.visible = true;
+      ball.reset(game.world.width * 0.5, game.world.height - 25);
+      paddle.reset(game.world.width * 0.5, game.world.height - 5);
+      game.input.onDown.addOnce(function () {
+        lifeLostText.visible = false;
+        ball.body.velocity.set(150, -150);
+      }, this);
+    } else {
+      alert("你輸了, 遊戲結束!");
+      location.reload();
+    }
+  }
+
+  
+  function handleRemoteImagesOnJSFiddle() {
+    game.load.baseURL =
+      "https://end3r.github.io/Gamedev-Phaser-Content-Kit/demos/";
+    game.load.crossOrigin = "anonymous";
+  }
+</script>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <a href="https://joe94113.github.io"><img src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark" href="tel:0970818779"><i
+                class="ti-mobile mr-3 text-primary"></i>0970818779</a></li>
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Tainan, Taiwan</li>
+          <li class="mb-3"><a class="text-dark" href="mailto:joe94113@email.com"><i
+                class="ti-email mr-3 text-primary"></i>joe94113@email.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.facebook.com/Blizzardsumme/">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/guan___zhi/?hl=zh-tw">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/joe94113">github</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/ajax">Ajax</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/html-css">Html css</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/javascript">Javascript</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/jquery">Jquery</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/laravel">Laravel</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/linux">Linux</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/mysql">Mysql</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/php">Php</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/python">Python</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://joe94113.github.io/about">About</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | copyright © 2020 <a href="https://themefisher.com">Themefisher</a> All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://joe94113.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://joe94113.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/mark.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://joe94113.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script></body>
+</html>

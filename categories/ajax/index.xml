@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AJAX on Joe&#39;s Blog</title>
+    <link>https://joe94113.github.io/categories/ajax/</link>
+    <description>Recent content in AJAX on Joe&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 25 Oct 2021 10:07:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://joe94113.github.io/categories/ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laravel csrf token mismatch for ajax POST Request</title>
+      <link>https://joe94113.github.io/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</link>
+      <pubDate>Mon, 25 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</guid>
+      <description>Laravel csrf token mismatch for ajax POST Request 在 laravel 裡使用 ajax post 方法遇到 CSRF Token 不符問題</description>
+    </item>
+    
+  </channel>
+</rss>

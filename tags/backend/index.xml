@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on Joe&#39;s Blog</title>
+    <link>https://joe94113.github.io/tags/backend/</link>
+    <description>Recent content in Backend on Joe&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 27 Oct 2021 10:07:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://joe94113.github.io/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laravel Seeders</title>
+      <link>https://joe94113.github.io/blog/laravel_seeder/</link>
+      <pubDate>Wed, 27 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_seeder/</guid>
+      <description>Laravel Seeders 簡介 Laravel 可以使用 seed 類別，填充測試用的資料，或者是說這個資料表的資料都是固定的不會更動，也可以使用 seed 來創建資料
+撰寫 seeder 首先透過 artisan 指令來生成 seeder 檔案，命名規則也應遵守大小寫，類似UserTableSeeder 。</description>
+    </item>
+    
+    <item>
+      <title>Laravel csrf token mismatch for ajax POST Request</title>
+      <link>https://joe94113.github.io/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</link>
+      <pubDate>Mon, 25 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel%E4%BD%BF%E7%94%A8ajax_post%E5%95%8F%E9%A1%8C/</guid>
+      <description>Laravel csrf token mismatch for ajax POST Request 在 laravel 裡使用 ajax post 方法遇到 CSRF Token 不符問題</description>
+    </item>
+    
+    <item>
+      <title>解決 json_encode 格式化的數據出現反斜杠的問題</title>
+      <link>https://joe94113.github.io/blog/%E8%A7%A3%E6%B1%BA-json_encode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%95%8F%E9%A1%8C/</link>
+      <pubDate>Mon, 25 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/%E8%A7%A3%E6%B1%BA-json_encode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%95%8F%E9%A1%8C/</guid>
+      <description>解決 json_encode 格式化的數據出現反斜杠的問題 在上傳多個圖片檔案使用 json_encode 格式化完成時發現
+原先陣列資料：[&amp;quot;/img/store/1635141776.png&amp;quot;,&amp;quot;/img/store/1635141776.png&amp;quot;,&amp;quot;/img/store/1635141776.png&amp;quot;]
+陣列路徑被轉換以下 [&amp;quot;\/img\/store\/1635141776.png&amp;quot;,&amp;quot;\/img\/store\/1635141776.png&amp;quot;,&amp;quot;\/img\/store\/1635141776.png&amp;quot;] 只要有&amp;rdquo; / &amp;ldquo;就會變成&amp;rdquo; \/ &amp;ldquo;，這樣無法讀取到檔案</description>
+    </item>
+    
+    <item>
+      <title>Laravel use notification when some data add</title>
+      <link>https://joe94113.github.io/blog/laravel_storeadd_notification_to_user/</link>
+      <pubDate>Thu, 14 Oct 2021 11:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_storeadd_notification_to_user/</guid>
+      <description>Laravel use notification when some data add 今天就舉一個例子，如果有商家新增了，將通知給使用者 1. 下載 laravel notofocation 資料表 php artisan notifications:tablephp artisan migrate2.</description>
+    </item>
+    
+    <item>
+      <title>Laravel Carbon format now time</title>
+      <link>https://joe94113.github.io/blog/laravel_carbon_format_nowtime/</link>
+      <pubDate>Thu, 14 Oct 2021 09:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_carbon_format_nowtime/</guid>
+      <description>Laravel Carbon format now time use Carbon\Carbon;$date = Carbon::now();$formatedDate = $date-&amp;gt;format(&amp;#39;Y-m-d H:i:s&amp;#39;);echo($formatedDate);</description>
+    </item>
+    
+    <item>
+      <title>How to use Chosen JQuery plugin on Laravel</title>
+      <link>https://joe94113.github.io/blog/laravel_use_chosen/</link>
+      <pubDate>Wed, 13 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_use_chosen/</guid>
+      <description>How to use Chosen JQuery plugin on Laravel chosen packagist</description>
+    </item>
+    
+    <item>
+      <title>Laravel how to post values from a multiple select</title>
+      <link>https://joe94113.github.io/blog/laravel_post_multipleselect_values/</link>
+      <pubDate>Wed, 13 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_post_multipleselect_values/</guid>
+      <description>Laravel how to post values from a multiple select 首先，記得在你的 select tag 的 name 後面加上括號[]，這樣子在複選後，傳到後端去的時候才會取得到複選的所有值。</description>
+    </item>
+    
+    <item>
+      <title>PHP學習筆記(持續更新中)</title>
+      <link>https://joe94113.github.io/blog/php_learn/</link>
+      <pubDate>Tue, 05 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/php_learn/</guid>
+      <description>PHP 學習筆記(持續更新中) PHP 的資料型態 Bollean 布林值 算是最簡單的資料型態，可以為 true 跟 false 不區分大小寫。</description>
+    </item>
+    
+    <item>
+      <title>Laravel 路由</title>
+      <link>https://joe94113.github.io/blog/laravel_route/</link>
+      <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_route/</guid>
+      <description>Laravel 路由 基本路由 首先看到 rotues 資料夾裡的 web.php，會看到這些程式碼
+Route::get(&#39;/&#39;, function () { // 使用get方法請求 return view(&#39;welcome&#39;); // 回傳view給他 }); view 的位置就放在resources\views\welcome.</description>
+    </item>
+    
+    <item>
+      <title>laravel排程下載外部Url檔案，及更新進資料庫資料</title>
+      <link>https://joe94113.github.io/blog/laravel_auto_download/</link>
+      <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_auto_download/</guid>
+      <description>laravel 排程下載外部 Url 檔案，及更新進資料庫資料 如何下載外部公開 URL 首先利用 Client 套件下載外部 url 的 csv 檔案。</description>
+    </item>
+    
+    <item>
+      <title>Laravel目錄結構</title>
+      <link>https://joe94113.github.io/blog/laravel_folder/</link>
+      <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_folder/</guid>
+      <description>Laravel目錄結構 先來說說各個目錄及資料夾裡面放置檔案，並沒有強制規定
+根目錄 app目錄 app資料夾都是應用程式的核心程式碼，大部分程式碼都放在這。
+Bootstarp目錄 bootstrap 目錄包含的檔案用來啟動框架和設定自動載入；以及包含一個 cache 資料夾，其中內有框架對效能最佳化所產生的檔案，例如 route 和 services 的快取檔案。</description>
+    </item>
+    
+    <item>
+      <title>Laravel起步走</title>
+      <link>https://joe94113.github.io/blog/laravel_start/</link>
+      <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_start/</guid>
+      <description>Laravel起步走 Laravel是一個MVC架構的PHP框架，分別是model(資料處理)，controller(控制器)，view(呈現畫面)，
+Laravel還有提供了驗證(authentication)、路由(routing)、sessions、快取(caching) 等開發過程中經常用到的工具或功能。是一個強大的網頁開發框架。
+那要怎麼使用laravel呢?
+1. 安裝composer 首先先下載composer官方載點 我是window開發用戶 安裝後選擇本機php位置安裝，安裝完畢後可以在命令提示字元(簡稱cmd)確認是否安裝完成 輸入:composer -v 看到這畫面代表成功囉</description>
+    </item>
+    
+    <item>
+      <title>解決Laravel 讀取不到.env檔案中的參數</title>
+      <link>https://joe94113.github.io/blog/laravel_can_not_read.env/</link>
+      <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_can_not_read.env/</guid>
+      <description>解決Laravel 讀取不到.env檔案中的參數 CMD Run
+composer dump-autoload php artisan cache:clear php artisan config:clear php artisan view:clear </description>
+    </item>
+    
+    <item>
+      <title>Laravel use google map place api輸入地址取得經緯度</title>
+      <link>https://joe94113.github.io/blog/laravel_google_place_api/</link>
+      <pubDate>Wed, 08 Sep 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/laravel_google_place_api/</guid>
+      <description>Laravel use google map place api 輸入地址取得經緯度 註冊和啟用 PLACE API 先到 GCP 註冊，前三個月免費 到這裡搜尋 PLACE API 找到之後點選啟用 創建金鑰 點選 API 和服務-&amp;gt;點選憑證-&amp;gt;建立憑證-&amp;gt;API 金鑰 這樣子就建立成功囉</description>
+    </item>
+    
+    <item>
+      <title>Python line bpt</title>
+      <link>https://joe94113.github.io/blog/linebot-post/</link>
+      <pubDate>Tue, 08 Sep 2020 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/linebot-post/</guid>
+      <description>line bot : ROBOT小秘書 ID:@627tmjef by 王冠智 (instagram)
+加入好友 功能 1.</description>
+    </item>
+    
+  </channel>
+</rss>

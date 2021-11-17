@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Joe&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="laravel排程下載csv檔案並存入資料庫">
+  <meta name="author" content="Joe">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+
+  
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://joe94113.github.io"><img class="img-fluid"
+          src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/Blizzardsumme/"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/guan___zhi/?hl=zh-tw"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/joe94113"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://joe94113.github.io"><img class="img-fluid"
+            src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/">新站位置</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/about">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/timeline">timeline</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/game">Game</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://joe94113.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <a href="/categories/laravel"
+          class="text-primary">Laravel</a>
+        
+        <h2>laravel排程下載外部Url檔案，及更新進資料庫資料</h2>
+        <div class="mb-3 post-meta">
+          <span>By Joe</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>10 September 2021</span>
+          
+        </div>
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtSaORKeMowAMvfKdUm3KLkXgiby-2JKSFEA&amp;usqp=CAU" class="img-fluid w-100 mb-4" alt="laravel排程下載外部Url檔案，及更新進資料庫資料">
+        
+        <div class="content mb-5">
+          <h1 id="laravel-排程下載外部-url-檔案及更新進資料庫資料">laravel 排程下載外部 Url 檔案，及更新進資料庫資料</h1>
+<h2 id="如何下載外部公開-url">如何下載外部公開 URL</h2>
+<p>首先利用 Client 套件下載外部 url 的 csv 檔案。</p>
+<p>本文撰寫使用抓取此網址<code>https://od.cdc.gov.tw/acute/幼兒常規疫苗接種時間試算表.csv</code>為範例</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function download()
+{
+    $client = new \GuzzleHttp\Client();
+    $a = $client-&gt;get(&#39;https:/example/example.csv&#39;, [&#39;save_to&#39; =&gt; resource_path() . &#39;/download/file.csv&#39;]);
+    return response(200);
+}
+</code></pre></div><h2 id="如何將下載檔案匯進資料庫">如何將下載檔案匯進資料庫</h2>
+<p>使用 laravel-excel 套件將下載的檔案 import 進資料庫</p>
+<p><a href="https://docs.laravel-excel.com/3.1/getting-started/installation.html">laravel-excel 安裝</a></p>
+<p>因為等等會用到先說說 laravel ORM 的 firstOrCreate 方法</p>
+<p>功能 : 將嘗試使用給定的列/值對定位數據庫記錄。如果在數據庫中找不到模型，則會插入一條記錄，其中包含將第一個數組參數與可選的第二個數組參數合併後的屬性</p>
+<p>以下為文檔範例:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use App\Models\Flight;
+
+// Retrieve flight by name or create it if it doesn&#39;t exist...
+$flight = Flight::firstOrCreate([
+    &#39;name&#39; =&gt; &#39;London to Paris&#39;
+]);
+
+// Retrieve flight by name or create it with the name, delayed, and arrival_time attributes...
+$flight = Flight::firstOrCreate(
+    [&#39;name&#39; =&gt; &#39;London to Paris&#39;],
+    [&#39;delayed&#39; =&gt; 1, &#39;arrival_time&#39; =&gt; &#39;11:30&#39;]
+);
+
+</code></pre></div><p>再來先創建要傳遞的類
+檔案可以放在 app/imports/ExampleImport.php</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#007020">&lt;?php</span>
+
+<span style="color:#007020;font-weight:bold">namespace</span> App\Imports;
+
+<span style="color:#007020;font-weight:bold">use</span> App\Vaccination;
+<span style="color:#007020;font-weight:bold">use</span> Illuminate\Support\Collection;
+<span style="color:#007020;font-weight:bold">use</span> Maatwebsite\Excel\Concerns\ToCollection;
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">VaccinationImport</span> <span style="color:#007020;font-weight:bold">implements</span> ToCollection
+{
+    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">collection</span>(Collection <span style="color:#bb60d5">$rows</span>)
+    {
+        <span style="color:#007020;font-weight:bold">foreach</span> (<span style="color:#bb60d5">$rows</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#bb60d5">$k</span> <span style="color:#666">=&gt;</span> <span style="color:#bb60d5">$row</span>)
+        {
+            <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#bb60d5">$k</span> <span style="color:#666">&lt;</span> <span style="color:#40a070">1</span>) <span style="color:#007020;font-weight:bold">continue</span>; <span style="color:#60a0b0;font-style:italic">// 跳過標題
+</span><span style="color:#60a0b0;font-style:italic"></span>
+            Vaccination<span style="color:#666">::</span><span style="color:#4070a0">firstOrCreate</span>([ <span style="color:#60a0b0;font-style:italic">//
+</span><span style="color:#60a0b0;font-style:italic"></span>            <span style="color:#4070a0">&#39;age&#39;</span> <span style="color:#666">=&gt;</span> <span style="color:#bb60d5">$row</span>[<span style="color:#40a070">0</span>], <span style="color:#4070a0">&#39;kind&#39;</span> <span style="color:#666">=&gt;</span> <span style="color:#bb60d5">$row</span>[<span style="color:#40a070">1</span>], <span style="color:#4070a0">&#39;remark&#39;</span> <span style="color:#666">=&gt;</span> <span style="color:#bb60d5">$row</span>[<span style="color:#40a070">3</span>]
+            ]);
+        }
+    }
+}
+</code></pre></div><p>將 VaccinationImport 對像傳遞給 Excel::import()方法，將告訴包如何導入作為第二個參數傳遞的文件，第二個參數的文件就是上面程式碼下載下來的 csv 檔案放置位置。</p>
+<p>該文件應該位於您的默認文件系統磁盤中（參考資料 config/filesystems.php）。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function import()
+{
+    // 我沒有讓它找默認的，讓他尋找resource資料夾底下檔案
+    Excel::import(new VaccinationImport, resource_path(&#39;/download/file.csv&#39;));
+}
+</code></pre></div><h2 id="功能合併新增排程">功能合併新增排程</h2>
+<p>在 cmd 輸入以下指令，創建 command 檔案，算是一個可以自己寫命令(shell)的檔案</p>
+<pre><code>php artisan make:command DownloadCSV
+</code></pre><p>接著在 DownloadCSV.php 中修改</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#007020">&lt;?php</span>
+
+<span style="color:#007020;font-weight:bold">namespace</span> App\Console\Commands;
+
+<span style="color:#007020;font-weight:bold">use</span> Illuminate\Console\Command;
+<span style="color:#007020;font-weight:bold">use</span> App\Imports\VaccinationImport;
+<span style="color:#007020;font-weight:bold">use</span> Maatwebsite\Excel\Facades\Excel;
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">DownloadCSV</span> <span style="color:#007020;font-weight:bold">extends</span> Command
+{
+    <span style="color:#4070a0;font-style:italic">/**
+</span><span style="color:#4070a0;font-style:italic">     * The name and signature of the console command.
+</span><span style="color:#4070a0;font-style:italic">     *
+</span><span style="color:#4070a0;font-style:italic">     * @var string
+</span><span style="color:#4070a0;font-style:italic">     */</span>
+    <span style="color:#007020;font-weight:bold">protected</span> <span style="color:#bb60d5">$signature</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;download:vaccination&#39;</span>;  <span style="color:#60a0b0;font-style:italic">// 定義一個命令
+</span><span style="color:#60a0b0;font-style:italic"></span>
+    <span style="color:#4070a0;font-style:italic">/**
+</span><span style="color:#4070a0;font-style:italic">     * The console command description.
+</span><span style="color:#4070a0;font-style:italic">     *
+</span><span style="color:#4070a0;font-style:italic">     * @var string
+</span><span style="color:#4070a0;font-style:italic">     */</span>
+    <span style="color:#007020;font-weight:bold">protected</span> <span style="color:#bb60d5">$description</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#39;排程自動下載資料，對比資料庫寫入&#39;</span>;  <span style="color:#60a0b0;font-style:italic">// 一些介紹
+</span><span style="color:#60a0b0;font-style:italic"></span>
+    <span style="color:#4070a0;font-style:italic">/**
+</span><span style="color:#4070a0;font-style:italic">     * Create a new command instance.
+</span><span style="color:#4070a0;font-style:italic">     *
+</span><span style="color:#4070a0;font-style:italic">     * @return void
+</span><span style="color:#4070a0;font-style:italic">     */</span>
+    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> __construct()
+    {
+        <span style="color:#007020;font-weight:bold">parent</span><span style="color:#666">::</span><span style="color:#4070a0">__construct</span>();
+    }
+
+    <span style="color:#4070a0;font-style:italic">/**
+</span><span style="color:#4070a0;font-style:italic">     * Execute the console command.
+</span><span style="color:#4070a0;font-style:italic">     *
+</span><span style="color:#4070a0;font-style:italic">     * @return int
+</span><span style="color:#4070a0;font-style:italic">     */</span>
+    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">handle</span>() <span style="color:#60a0b0;font-style:italic">// 主要程式碼
+</span><span style="color:#60a0b0;font-style:italic"></span>    {
+        <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">download</span>(); <span style="color:#60a0b0;font-style:italic">// 下載外部csv
+</span><span style="color:#60a0b0;font-style:italic"></span>
+        <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">import</span>(); <span style="color:#60a0b0;font-style:italic">// 對比資料庫更新及新增
+</span><span style="color:#60a0b0;font-style:italic"></span>    }
+
+    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">download</span>()
+    {
+        <span style="color:#bb60d5">$client</span> <span style="color:#666">=</span> <span style="color:#007020;font-weight:bold">new</span> \GuzzleHttp\Client();
+        <span style="color:#bb60d5">$client</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">get</span>(<span style="color:#4070a0">&#39;https:/example/example.csv&#39;</span>, [<span style="color:#4070a0">&#39;save_to&#39;</span> <span style="color:#666">=&gt;</span> resource_path() <span style="color:#666">.</span> <span style="color:#4070a0">&#39;/download/file.csv&#39;</span>]);
+
+        <span style="color:#007020;font-weight:bold">return</span> response(<span style="color:#40a070">200</span>);
+    }
+
+    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">import</span>()
+    {
+        Excel<span style="color:#666">::</span><span style="color:#4070a0">import</span>(<span style="color:#007020;font-weight:bold">new</span> VaccinationImport, resource_path(<span style="color:#4070a0">&#39;/download/file.csv&#39;</span>));
+    }
+}
+</code></pre></div><p>修改完成接下來到 app/Console/Kernel.php</p>
+<p>修改及導入命令程式碼</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#007020">&lt;?php</span>
+
+<span style="color:#007020;font-weight:bold">namespace</span> App\Console;
+
+<span style="color:#007020;font-weight:bold">use</span> App\Console\Commands\DownloadCSV; <span style="color:#60a0b0;font-style:italic">// 導入
+</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">use</span> Illuminate\Console\Scheduling\Schedule;
+<span style="color:#007020;font-weight:bold">use</span> Illuminate\Foundation\Console\Kernel <span style="color:#007020;font-weight:bold">as</span> ConsoleKernel;
+
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Kernel</span> <span style="color:#007020;font-weight:bold">extends</span> ConsoleKernel
+{
+    <span style="color:#4070a0;font-style:italic">/**
+</span><span style="color:#4070a0;font-style:italic">     * The Artisan commands provided by your application.
+</span><span style="color:#4070a0;font-style:italic">     *
+</span><span style="color:#4070a0;font-style:italic">     * @var array
+</span><span style="color:#4070a0;font-style:italic">     */</span>
+    <span style="color:#007020;font-weight:bold">protected</span> <span style="color:#bb60d5">$commands</span> <span style="color:#666">=</span> [
+        DownloadCSV<span style="color:#666">::</span><span style="color:#4070a0">class</span>
+    ];
+
+    <span style="color:#4070a0;font-style:italic">/**
+</span><span style="color:#4070a0;font-style:italic">     * Define the application&#39;s command schedule.
+</span><span style="color:#4070a0;font-style:italic">     *
+</span><span style="color:#4070a0;font-style:italic">     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+</span><span style="color:#4070a0;font-style:italic">     * @return void
+</span><span style="color:#4070a0;font-style:italic">     */</span>
+    <span style="color:#60a0b0;font-style:italic">// 定義要排程的指令或流程
+</span><span style="color:#60a0b0;font-style:italic"></span>    <span style="color:#007020;font-weight:bold">protected</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">schedule</span>(Schedule <span style="color:#bb60d5">$schedule</span>)
+    {
+        <span style="color:#60a0b0;font-style:italic">// 這邊就會跑command檔案handle函式
+</span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#60a0b0;font-style:italic">// 設定為一個小時跑一次
+</span><span style="color:#60a0b0;font-style:italic"></span>        <span style="color:#bb60d5">$schedule</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">command</span>(<span style="color:#4070a0">&#39;download:vaccination&#39;</span>)<span style="color:#666">-&gt;</span><span style="color:#4070a0">hourly</span>();
+    }
+
+    <span style="color:#4070a0;font-style:italic">/**
+</span><span style="color:#4070a0;font-style:italic">     * Register the commands for the application.
+</span><span style="color:#4070a0;font-style:italic">     *
+</span><span style="color:#4070a0;font-style:italic">     * @return void
+</span><span style="color:#4070a0;font-style:italic">     */</span>
+    <span style="color:#007020;font-weight:bold">protected</span> <span style="color:#007020;font-weight:bold">function</span> <span style="color:#06287e">commands</span>()
+    {
+        <span style="color:#bb60d5">$this</span><span style="color:#666">-&gt;</span><span style="color:#4070a0">load</span>(<span style="color:#60add5">__DIR__</span><span style="color:#666">.</span><span style="color:#4070a0">&#39;/Commands&#39;</span>);
+
+        <span style="color:#007020;font-weight:bold">require</span> base_path(<span style="color:#4070a0">&#39;routes/console.php&#39;</span>);
+    }
+}
+</code></pre></div><p>程式碼部分就算完成了，接下來就是要設定排程工作</p>
+<p>我是在 Linux 上面做開發，如要要讓它排程就要加入 CronJob</p>
+<p>在 Linux 上輸入</p>
+<p><code>crontab -e</code></p>
+<p>按 i 編輯，輸入以下這行，它是告訴這個 package 每一分鐘 run 一次<code>php artisan schedule:run</code> 就是跑排程的意思。</p>
+<pre><code>* * * * * cd /path-to-your-project &amp;&amp; php artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
+</code></pre><p><code>path-to-your-project</code>改成你的專案路徑</p>
+<p>輸入完畢按下 esc，然後輸入:wq 離開並儲存，跑出以下這行表示成功拉</p>
+<p><code>crontab: installing new crontab</code></p>
+<h2 id="參考資料">參考資料</h2>
+<p>更多相關排程時間參考<a href="https://laravel.com/docs/8.x/scheduling#schedule-frequency-options">這裡</a></p>
+<p>更多排程相關資料請參照<a href="https://laravel.com/docs/8.x/scheduling">laravel Task Scheduling 文檔</a></p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joe94113" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <a href="https://joe94113.github.io"><img src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark" href="tel:0970818779"><i
+                class="ti-mobile mr-3 text-primary"></i>0970818779</a></li>
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Tainan, Taiwan</li>
+          <li class="mb-3"><a class="text-dark" href="mailto:joe94113@email.com"><i
+                class="ti-email mr-3 text-primary"></i>joe94113@email.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.facebook.com/Blizzardsumme/">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/guan___zhi/?hl=zh-tw">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/joe94113">github</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/ajax">Ajax</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/html-css">Html css</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/javascript">Javascript</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/jquery">Jquery</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/laravel">Laravel</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/linux">Linux</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/mysql">Mysql</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/php">Php</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/python">Python</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://joe94113.github.io/about">About</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | copyright © 2020 <a href="https://themefisher.com">Themefisher</a> All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://joe94113.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://joe94113.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/mark.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://joe94113.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script></body>
+</html>

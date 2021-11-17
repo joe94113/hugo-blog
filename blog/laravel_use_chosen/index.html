@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Joe&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用chosen套件">
+  <meta name="author" content="Joe">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+
+  
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://joe94113.github.io"><img class="img-fluid"
+          src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/Blizzardsumme/"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/guan___zhi/?hl=zh-tw"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/joe94113"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://joe94113.github.io"><img class="img-fluid"
+            src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/">新站位置</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/about">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/timeline">timeline</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/game">Game</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://joe94113.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <a href="/categories/laravel"
+          class="text-primary">Laravel</a>
+        
+        <a href="/categories/jquery"
+          class="text-primary">J query</a>
+        
+        <h2>How to use Chosen JQuery plugin on Laravel</h2>
+        <div class="mb-3 post-meta">
+          <span>By Joe</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>13 October 2021</span>
+          
+        </div>
+        
+        <img src="https://occ-0-1722-92.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABdW3qhonFtfkASHZqbnCS2Z_dtpsjhW6a_boKPMtEoggWgRkldJihZKj6Ik-LDcvW1UTtZ-AtuknwvzsQ3_a-e5ZE6_9ezWJ7B5d.png?r=d7b" class="img-fluid w-100 mb-4" alt="How to use Chosen JQuery plugin on Laravel">
+        
+        <div class="content mb-5">
+          <h1 id="how-to-use-chosen-jquery-plugin-on-laravel">How to use Chosen JQuery plugin on Laravel</h1>
+<p><a href="https://packagist.org/packages/harvesthq/chosen">chosen packagist</a></p>
+<h3 id="1-install">1. Install</h3>
+<pre><code>`composer require harvesthq/chosen`
+</code></pre>
+<h3 id="2-import">2. Import</h3>
+<p>Import jquery first, otherwise an error will occur</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#062873;font-weight:bold">script</span> <span style="color:#4070a0">src</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#062873;font-weight:bold">script</span>&gt;
+&lt;<span style="color:#062873;font-weight:bold">script</span> <span style="color:#4070a0">src</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#062873;font-weight:bold">script</span>&gt;
+&lt;<span style="color:#062873;font-weight:bold">link</span>
+  <span style="color:#4070a0">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css&#34;</span>
+  <span style="color:#4070a0">rel</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;stylesheet&#34;</span>
+/&gt;
+</code></pre></div><h3 id="3-add-form">3. add form</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#062873;font-weight:bold">script</span> <span style="color:#4070a0">src</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#062873;font-weight:bold">script</span>&gt;
+&lt;<span style="color:#062873;font-weight:bold">script</span> <span style="color:#4070a0">src</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#062873;font-weight:bold">script</span>&gt;
+&lt;<span style="color:#062873;font-weight:bold">link</span>
+  <span style="color:#4070a0">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css&#34;</span>
+  <span style="color:#4070a0">rel</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;stylesheet&#34;</span>
+/&gt;
+
+&lt;<span style="color:#062873;font-weight:bold">script</span>&gt;
+  $(<span style="color:#007020">document</span>).ready(<span style="color:#007020;font-weight:bold">function</span> () {
+    $(<span style="color:#4070a0">&#34;.chosen-select&#34;</span>).chosen({
+      no_results_text<span style="color:#666">:</span> <span style="color:#4070a0">&#34;Oops, nothing found!&#34;</span>,
+    });
+  });
+&lt;/<span style="color:#062873;font-weight:bold">script</span>&gt;
+
+&lt;<span style="color:#062873;font-weight:bold">form</span> <span style="color:#4070a0">action</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://httpbin.org/post&#34;</span> <span style="color:#4070a0">method</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;post&#34;</span>&gt;
+  &lt;<span style="color:#062873;font-weight:bold">select</span>
+    <span style="color:#4070a0">data-placeholder</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;select your favorite fruit&#34;</span>
+    <span style="color:#4070a0">multiple</span>
+    <span style="color:#4070a0">class</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;chosen-select&#34;</span>
+    <span style="color:#4070a0">name</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;fruit[]&#34;</span>
+  &gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span> <span style="color:#4070a0">value</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;&#34;</span>&gt;&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Apple&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Banana&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Cherry&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Kiwi fruit&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Mango&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Orange&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Papaya&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#062873;font-weight:bold">option</span>&gt;Sapota&lt;/<span style="color:#062873;font-weight:bold">option</span>&gt;
+  &lt;/<span style="color:#062873;font-weight:bold">select</span>&gt;
+  &lt;<span style="color:#062873;font-weight:bold">input</span> <span style="color:#4070a0">type</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;submit&#34;</span> /&gt;
+&lt;/<span style="color:#062873;font-weight:bold">form</span>&gt;
+</code></pre></div><ol start="4">
+<li>Run code</li>
+</ol>
+<p><img src="https://i.imgur.com/PAuSrFF.png" alt=""></p>
+<ol start="5">
+<li>Submit</li>
+</ol>
+<p><img src="https://i.imgur.com/kNCfZCS.jpg" alt=""></p>
+<p>Need more changes see <a href="https://harvesthq.github.io/chosen/">chosen doc</a></p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joe94113" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <a href="https://joe94113.github.io"><img src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark" href="tel:0970818779"><i
+                class="ti-mobile mr-3 text-primary"></i>0970818779</a></li>
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Tainan, Taiwan</li>
+          <li class="mb-3"><a class="text-dark" href="mailto:joe94113@email.com"><i
+                class="ti-email mr-3 text-primary"></i>joe94113@email.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.facebook.com/Blizzardsumme/">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/guan___zhi/?hl=zh-tw">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/joe94113">github</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/ajax">Ajax</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/html-css">Html css</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/javascript">Javascript</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/jquery">Jquery</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/laravel">Laravel</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/linux">Linux</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/mysql">Mysql</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/php">Php</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/python">Python</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://joe94113.github.io/about">About</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | copyright © 2020 <a href="https://themefisher.com">Themefisher</a> All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://joe94113.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://joe94113.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/mark.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://joe94113.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script></body>
+</html>

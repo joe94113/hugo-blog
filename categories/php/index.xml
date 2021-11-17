@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on Joe&#39;s Blog</title>
+    <link>https://joe94113.github.io/categories/php/</link>
+    <description>Recent content in PHP on Joe&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 25 Oct 2021 10:07:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://joe94113.github.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解決 json_encode 格式化的數據出現反斜杠的問題</title>
+      <link>https://joe94113.github.io/blog/%E8%A7%A3%E6%B1%BA-json_encode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%95%8F%E9%A1%8C/</link>
+      <pubDate>Mon, 25 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/%E8%A7%A3%E6%B1%BA-json_encode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%95%8F%E9%A1%8C/</guid>
+      <description>解決 json_encode 格式化的數據出現反斜杠的問題 在上傳多個圖片檔案使用 json_encode 格式化完成時發現
+原先陣列資料：[&amp;quot;/img/store/1635141776.png&amp;quot;,&amp;quot;/img/store/1635141776.png&amp;quot;,&amp;quot;/img/store/1635141776.png&amp;quot;]
+陣列路徑被轉換以下 [&amp;quot;\/img\/store\/1635141776.png&amp;quot;,&amp;quot;\/img\/store\/1635141776.png&amp;quot;,&amp;quot;\/img\/store\/1635141776.png&amp;quot;] 只要有&amp;rdquo; / &amp;ldquo;就會變成&amp;rdquo; \/ &amp;ldquo;，這樣無法讀取到檔案</description>
+    </item>
+    
+    <item>
+      <title>PHP學習筆記(持續更新中)</title>
+      <link>https://joe94113.github.io/blog/php_learn/</link>
+      <pubDate>Tue, 05 Oct 2021 10:07:47 +0800</pubDate>
+      
+      <guid>https://joe94113.github.io/blog/php_learn/</guid>
+      <description>PHP 學習筆記(持續更新中) PHP 的資料型態 Bollean 布林值 算是最簡單的資料型態，可以為 true 跟 false 不區分大小寫。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Joe&#39;s Blog</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介紹Laravel 路由">
+  <meta name="author" content="Joe">
+  <meta name="generator" content="Hugo 0.68.3" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://joe94113.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://joe94113.github.io/images/favicon.png " type="image/x-icon">
+
+  
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://joe94113.github.io"><img class="img-fluid"
+          src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/Blizzardsumme/"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/guan___zhi/?hl=zh-tw"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/joe94113"><i class="ti-github"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://joe94113.github.io"><img class="img-fluid"
+            src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/">新站位置</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/about">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/timeline">timeline</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://joe94113.github.io/game">Game</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://joe94113.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        
+        <a href="/categories/laravel"
+          class="text-primary">Laravel</a>
+        
+        <h2>Laravel 路由</h2>
+        <div class="mb-3 post-meta">
+          <span>By Joe</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>10 September 2021</span>
+          
+        </div>
+        
+        <img src="https://www.larashout.com/wp-content/uploads/2019/03/Laravel-Routes-Made-Easy.jpg" class="img-fluid w-100 mb-4" alt="Laravel 路由">
+        
+        <div class="content mb-5">
+          <h1 id="laravel-路由">Laravel 路由</h1>
+<h2 id="基本路由">基本路由</h2>
+<p>首先看到 rotues 資料夾裡的 web.php，會看到這些程式碼</p>
+<pre><code class="language-php=" data-lang="php=">Route::get('/', function () { // 使用get方法請求
+    return view('welcome'); // 回傳view給他
+});
+</code></pre><p>view 的位置就放在<code>resources\views\welcome.blade.php</code></p>
+<p>接下來說說來說說基本路由
+Laravel 的路由只接受一個 URI 和一個 Closure(閉包)</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;foo&#39;, function () {
+    return &#39;Hello World&#39;;
+});
+</code></pre></div><p>laravel 可以使用所有 HTTP 的方法</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);
+</code></pre></div><p>可能你這個路由可以響應多個 HTTP 的請求，可以使用 match，或者任何請求都可以就使用 any</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::match([&#39;get&#39;, &#39;post&#39;], &#39;/&#39;, function () {
+    //
+});
+
+Route::any(&#39;foo&#39;, function () {
+    //
+});
+</code></pre></div><p>如果有將路由指向任何 HTML 表單 POST，PUT 或 DELETE 放在<code>web.php</code>中，應當包括 CSRF 令牌字段。否則，請求將被拒絕。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#062873;font-weight:bold">form</span> <span style="color:#4070a0">method</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;POST&#34;</span> <span style="color:#4070a0">action</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;/profile&#34;</span>&gt;{{ csrf_field() }} ...&lt;/<span style="color:#062873;font-weight:bold">form</span>&gt;
+</code></pre></div><h2 id="路由參數">路由參數</h2>
+<h3 id="所需參數">所需參數</h3>
+<p>有時需要捕捉路由中的 URI 字段，可以通過以下方式實現</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;user/{id}&#39;, function ($id) {
+    return &#34;User: $id&#34;;
+});
+</code></pre></div><p>如下圖所示:
+<img src="https://i.imgur.com/rIkt6kb.jpg" alt=""></p>
+<p>可以根據自己的想法來定義更多的路線參數</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;posts/{post}/comments/{comment}&#39;, function ($postId, $commentId) {
+    //
+});
+</code></pre></div><h3 id="可選參數">可選參數</h3>
+<p>有時可能需要指定一個路由參數，但將該路由參數的存在設為可選。您可以通過?在參數名稱後放置一個標記來實現。確保給路由對應的變量一個默認值：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;user/{name?}&#39;, function ($name = null) {
+    return $name;
+});
+
+Route::get(&#39;user/{name?}&#39;, function ($name = &#39;John&#39;) {
+    return $name;
+});
+</code></pre></div><h3 id="正規表達法約束">正規表達法約束</h3>
+<p>您可以使用 where 路由實例上的方法來限制路由參數的格式。該 where 方法接受參數的名稱和定義參數應如何約束的正則表達式：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;user/{name}&#39;, function ($name) {
+    //
+})-&gt;where(&#39;name&#39;, &#39;[A-Za-z]+&#39;); // 他就會找出$name這個參數，符合規則的字段
+
+Route::get(&#39;user/{id}&#39;, function ($id) {
+    //
+})-&gt;where(&#39;id&#39;, &#39;[0-9]+&#39;);
+
+Route::get(&#39;user/{id}/{name}&#39;, function ($id, $name) {
+    //
+})-&gt;where([&#39;id&#39; =&gt; &#39;[0-9]+&#39;, &#39;name&#39; =&gt; &#39;[a-z]+&#39;]);
+</code></pre></div><h4 id="全局約束">全局約束</h4>
+<p>如果您希望路由參數始終受給定正則表達式的約束，則可以使用該 pattern 方法。您應該在<code>boot</code>您的方法中定義這些模式<code>RouteServiceProvider</code>：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/**
+ * Define your route model bindings, pattern filters, etc.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Route::pattern(&#39;id&#39;, &#39;[0-9]+&#39;);
+
+    parent::boot();
+}
+</code></pre></div><p>一旦定義了模式，它就會自動應用於使用該參數名稱的所有路由：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;user/{id}&#39;, function ($id) {
+    // Only executed if {id} is numeric...
+});
+</code></pre></div><h2 id="命名路由">命名路由</h2>
+<p>命名路由允許為特定路由方便地生成 URL 或重定向。您可以通過將 name 方法鏈接到路由定義來為路由指定名稱：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;user/profile&#39;, function () {
+    //
+})-&gt;name(&#39;profile&#39;);
+</code></pre></div><p>您還可以為控制器操作指定路由名稱：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;user/profile&#39;, &#39;UserController@showProfile&#39;)-&gt;name(&#39;profile&#39;);
+</code></pre></div><p>生成命名路由的 URL</p>
+<p>為給定路由指定名稱後，您可以在通過全局 route 函數生成 URL 或重定向時使用該路由的名稱：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// Generating URLs...
+$url = route(&#39;profile&#39;);
+
+// Generating Redirects...
+return redirect()-&gt;route(&#39;profile&#39;);
+</code></pre></div><p>如果命名路由定義了參數，您可以將參數作為第二個參數傳遞給 route 函數。給定的參數將自動插入到 URL 的正確位置：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Route::get(&#39;user/{id}/profile&#39;, function ($id) {
+    //
+})-&gt;name(&#39;profile&#39;);
+
+$url = route(&#39;profile&#39;, [&#39;id&#39; =&gt; 1]);
+</code></pre></div>
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "joe94113" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <a href="https://joe94113.github.io"><img src="https://joe94113.github.io/images/joelogo.png" alt="Joe&#39;s Blog"></a>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark" href="tel:0970818779"><i
+                class="ti-mobile mr-3 text-primary"></i>0970818779</a></li>
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Tainan, Taiwan</li>
+          <li class="mb-3"><a class="text-dark" href="mailto:joe94113@email.com"><i
+                class="ti-email mr-3 text-primary"></i>joe94113@email.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.facebook.com/Blizzardsumme/">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/guan___zhi/?hl=zh-tw">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/joe94113">github</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/ajax">Ajax</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/html-css">Html css</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/javascript">Javascript</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/jquery">Jquery</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/laravel">Laravel</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/linux">Linux</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/mysql">Mysql</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/php">Php</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/python">Python</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://joe94113.github.io/about">About</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-12 border-top py-4 text-center">
+        | copyright © 2020 <a href="https://themefisher.com">Themefisher</a> All Rights Reserved |
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://joe94113.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://joe94113.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/mark.js"></script>
+
+<script src="https://joe94113.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://joe94113.github.io/js/script.min.js"></script>
+<!-- google analitycs -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script></body>
+</html>
