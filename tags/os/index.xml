@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OS on Joe&#39;s Blog</title>
-    <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/os/</link>
+    <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/os/</link>
     <description>Recent content in OS on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 10 Sep 2021 10:07:47 +0800</lastBuildDate>
     
-	<atom:link href="https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/os/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/os/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux遇到資料夾權限問題</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/linux_fix_authority/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/blog/linux_fix_authority/</link>
       <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/blog/linux_fix_authority/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/blog/linux_fix_authority/</guid>
       <description>Linux遇到資料夾權限問題 問題: laravel - The stream or file &amp;quot;/storage/logs/laravel.log&amp;quot; could not be opened in append mode: failed to open stream: Permission denied</description>
     </item>
     

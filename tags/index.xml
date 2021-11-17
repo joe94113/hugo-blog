@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Joe&#39;s Blog</title>
-    <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/</link>
+    <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/</link>
     <description>Recent content in Tags on Joe&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 27 Oct 2021 10:07:47 +0800</lastBuildDate>
     
-	<atom:link href="https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Backend</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/backend/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/backend/</link>
       <pubDate>Wed, 27 Oct 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/backend/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/backend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/sql/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/sql/</link>
       <pubDate>Wed, 27 Oct 2021 09:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/sql/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Frontend</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/frontend/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/frontend/</link>
       <pubDate>Thu, 14 Oct 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/frontend/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/frontend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OS</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/os/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/os/</link>
       <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/os/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/os/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vscode</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/vscode/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/vscode/</link>
       <pubDate>Fri, 10 Sep 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/vscode/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/vscode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bot</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/bot/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/bot/</link>
       <pubDate>Tue, 08 Sep 2020 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/bot/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/bot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/python/</link>
+      <link>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/python/</link>
       <pubDate>Sun, 06 Sep 2020 10:07:47 +0800</pubDate>
       
-      <guid>https://hugo-blog-naryl0a16-joe94113.vercel.app/tags/python/</guid>
+      <guid>https://hugo-blog-5d5r8egzr-joe94113.vercel.app/tags/python/</guid>
       <description></description>
     </item>
     
